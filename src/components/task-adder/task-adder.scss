@@ -1,0 +1,105 @@
+@import '../../assets/common-styles/common-styles.scss';
+
+@mixin color-buttons($color) {
+	background-color: $color;
+
+	&.selected {
+		box-shadow: 1px 1px 2px black, 0 0 25px $color, 0 0 5px $color;
+	}
+}
+
+.task-adder {
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+	font-weight: 500;
+	gap: 50px;
+
+	&-color {
+		height: 50px;
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		p {
+			width: 90px;
+		}
+
+		&-buttons {
+			display: flex;
+			justify-content: space-between;
+			flex-grow: 1;
+
+			button {
+				width: 30px;
+				height: 30px;
+
+				&.red {
+					@include color-buttons($color-red);
+				}
+
+				&.green {
+					@include color-buttons($color-green);
+				}
+
+				&.blue {
+					@include color-buttons($color-blue);
+				}
+
+				&.black {
+					@include color-buttons($color-black);
+				}
+			}
+		}
+	}
+
+	&-description {
+		display: flex;
+		gap: 10px;
+		label {
+			width: 90px;
+		}
+		textarea {
+			background: transparent;
+			flex-grow: 1;
+			height: 50px;
+			max-height: 150px;
+			font-size: 16px;
+			font-weight: 500;
+			font-family: PlaypenSans;
+			padding: 5px;
+			border: 1px dashed #808080;
+
+			&.red {
+				color: $color-red;
+			}
+
+			&.green {
+				color: $color-green;
+			}
+
+			&.blue {
+				color: $color-blue;
+			}
+
+			&.black {
+				color: $color-black;
+			}
+		}
+	}
+
+	&-add-button {
+		margin: 0 auto;
+		background-color: #2f8100;
+		border: none;
+		height: 30px;
+		width: 100px;
+		border-radius: 20px;
+		font-size: 16px;
+		font-weight: 600;
+		cursor: pointer;
+
+		&:hover {
+			background-color: #276900;
+		}
+	}
+}

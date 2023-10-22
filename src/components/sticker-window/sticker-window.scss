@@ -1,0 +1,49 @@
+@import '../../assets/common-styles/common-styles.scss';
+
+.sticker-window {
+	width: 500px;
+	min-height: 300px;
+
+	&-header {
+		position: relative;
+		background-color: $color-sticker-yellow;
+		height: 50px;
+		padding: 5px 20px 5px;
+
+		font-size: 30px;
+		font-weight: 600;
+		font-style: italic;
+		text-transform: uppercase;
+		text-align: center;
+
+		&:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			border-top: 55px solid $color-background-gray;
+			border-left: 55px solid $color-sticker-dark-yellow;
+			width: 0;
+		}
+	}
+
+	&-container {
+		background-color: $color-sticker-yellow;
+		box-shadow: 0 8px 6px -6px black;
+	}
+
+	::-webkit-scrollbar {
+		background-color: $color-sticker-yellow;
+		width: 10px;
+	}
+	::-webkit-scrollbar-thumb {
+		background-color: #3e4200;
+		border-radius: 10px;
+	}
+}
+
+@media (max-width: 600px) {
+	.sticker-window {
+		width: 300px;
+	}
+}
